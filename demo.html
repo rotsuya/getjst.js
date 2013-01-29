@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>getjst.js demo</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <script src="http://ajax.cdnjs.com/ajax/libs/json2/20121008/json2.js"></script>
+    <![endif]-->
+    <script src="getjst.js"></script>
+    <style>
+        output {
+            display: block;
+            font-family: Menlo, Monaco, Lucida Console, monospace;
+            border: silver 1px solid;
+            padding: 0.5em;
+            box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.2);
+            height: 12em;
+            overflow-y: auto;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<button id="adjustButton">adjust time</button>
+<output id="result"></output>
+<script>
+    window.onload = function() {
+        document.getElementById('adjustButton').onclick = function() {
+            JST.request(
+                function(result) {
+                    var html = JSON.stringify(result, null, '\t');
+                    html = html.replace(/\n/g, '<br>').replace(/\t/g, '&nbsp;&nbsp;');
+                    document.getElementById('result').innerHTML += html;
+                }
+            );
+        };
+    };
+</script>
+</body>
+</html>
