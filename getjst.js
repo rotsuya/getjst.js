@@ -1,10 +1,9 @@
-/* 20121011 1808 */
 var JST = {
     scriptElems: [],        //JSONPのScriptタグ
     response: [],           //JSONPの結果
     urls: [                 //サーバURL
-        'http://ntp-a1.nict.go.jp/cgi-bin/jsont',
-        'http://ntp-b1.nict.go.jp/cgi-bin/jsont'
+        '//ntp-a1.nict.go.jp/cgi-bin/jsont',
+        '//ntp-b1.nict.go.jp/cgi-bin/jsont'
     ],
     isError: false,         //エラーフラグ
     retry: {
